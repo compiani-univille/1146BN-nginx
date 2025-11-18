@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/history")
+@RequestMapping
 public class HistoryController {
 
     private final HistoryDomainService service;

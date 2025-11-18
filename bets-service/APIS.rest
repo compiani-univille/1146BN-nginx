@@ -1,14 +1,14 @@
-### 🔹 Listar jogos
+### Listar jogos
 GET http://127.0.0.1:8080/bets-service/matches
 Accept: application/json
 
 
-### 🔹 Listar mercados de um jogo
+### Listar mercados de um jogo
 GET http://127.0.0.1:8080/bets-service/markets?matchId=101
 Accept: application/json
 
 
-### 🔹 Criar uma aposta
+### Criar uma aposta
 POST http://127.0.0.1:8080/bets-service/bets
 Content-Type: application/json
 Accept: application/json
@@ -23,17 +23,17 @@ Accept: application/json
 }
 
 
-### 🔹 Listar apostas do usuário atual
+### Listar apostas do usuário atual
 GET http://127.0.0.1:8080/bets-service/bets
 Accept: application/json
 
 
-### 🔹 Obter detalhe de uma aposta
+### Obter detalhe de uma aposta
 GET http://127.0.0.1:8080/bets-service/bets/90001
 Accept: application/json
 
 
-### 🔹 Fazer cashout de uma aposta
+### Fazer cashout de uma aposta
 POST http://127.0.0.1:8080/bets-service/bets/90001/cashout
 Content-Type: application/json
 Accept: application/json

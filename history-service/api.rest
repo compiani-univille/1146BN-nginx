@@ -1,19 +1,19 @@
 ### Listar histórico de apostas (todos)
-GET http://127.0.0.1:8080/history-service/history/bets
+GET http://127.0.0.1:8080/history-service/bets
 Accept: application/json
 
 ### Filtrar por status (WON)
-GET http://127.0.0.1:8080/history-service/history/bets?status=WON
+GET http://127.0.0.1:8080/history-service/bets?status=WON
 Accept: application/json
 
 ### Filtrar por intervalo de datas
-GET http://127.0.0.1:8080/history-service/history/bets?from=2025-11-10T00:00:00Z&to=2025-11-13T23:59:59Z
+GET http://127.0.0.1:8080/history-service/bets?from=2025-11-10T00:00:00Z&to=2025-11-13T23:59:59Z
 Accept: application/json
 
 ### Filtrar por nome do jogo
-GET http://127.0.0.1:8080/history-service/history/bets?match=Corinthians
+GET http://127.0.0.1:8080/history-service/bets?match=Corinthians
 Accept: application/json
 
 ### Detalhe de uma aposta
-GET http://127.0.0.1:8080/history-service/history/bets/90001
+GET http://127.0.0.1:8080/history-service/bets/90001
 Accept: application/json
