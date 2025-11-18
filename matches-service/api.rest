@@ -1,0 +1,19 @@
+### Listar todos
+GET http://127.0.0.1:8080/matches-service/matches
+Accept: application/json
+
+### Filtrar por time
+GET http://127.0.0.1:8080/matches-service/matches?team=palmeiras
+Accept: application/json
+
+### Filtrar por status
+GET http://127.0.0.1:8080/matches-service/matches?status=SCHEDULED
+Accept: application/json
+
+### Filtrar por intervalo de datas
+GET http://127.0.0.1:8080/matches-service/matches?dateFrom=2025-11-10T00:00:00Z&dateTo=2025-11-13T23:59:59Z
+Accept: application/json
+
+### Detalhe
+GET http://127.0.0.1:8080/matches-service/matches/101
+Accept: application/json
