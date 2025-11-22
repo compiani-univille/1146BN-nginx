@@ -1,0 +1,21 @@
+### Criar evento
+POST http://127.0.0.1:8080/audit-service/audit/events
+Content-Type: application/json
+
+{
+  "service": "bets-service",
+  "type": "CASHOUT",
+  "message": "Cashout realizado na aposta 90001."
+}
+
+### Listar tudo
+GET http://127.0.0.1:8080/audit-service/audit/events
+Accept: application/json
+
+### Filtrar por serviço
+GET http://127.0.0.1:8080/audit-service/audit/events?service=bets-service
+Accept: application/json
+
+### Filtrar por tipo
+GET http://127.0.0.1:8080/audit-service/audit/events?type=LOGIN
+Accept: application/json

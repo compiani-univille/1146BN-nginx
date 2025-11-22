@@ -1,0 +1,11 @@
+### Listar torneios
+GET http://127.0.0.1:8080/tournaments-service/tournaments
+Accept: application/json
+
+### Detalhe de um torneio
+GET http://127.0.0.1:8080/tournaments-service/tournaments/1
+Accept: application/json
+
+### Listar jogos de um torneio
+GET http://127.0.0.1:8080/tournaments-service/tournaments/1/matches
+Accept: application/json
