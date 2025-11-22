@@ -1,5 +1,5 @@
 ### Criar evento
-POST http://127.0.0.1:8080/audit-service/audit/events
+POST http://127.0.0.1:8080/audit-service/events
 Content-Type: application/json
 
 {
@@ -9,13 +9,13 @@ Content-Type: application/json
 }
 
 ### Listar tudo
-GET http://127.0.0.1:8080/audit-service/audit/events
+GET http://127.0.0.1:8080/audit-service/events
 Accept: application/json
 
 ### Filtrar por serviço
-GET http://127.0.0.1:8080/audit-service/audit/events?service=bets-service
+GET http://127.0.0.1:8080/audit-service/events?service=bets-service
 Accept: application/json
 
 ### Filtrar por tipo
-GET http://127.0.0.1:8080/audit-service/audit/events?type=LOGIN
+GET http://127.0.0.1:8080/audit-service/events?type=LOGIN
 Accept: application/json

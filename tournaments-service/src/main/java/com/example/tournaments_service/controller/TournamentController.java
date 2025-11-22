@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/tournaments")
+@RequestMapping
 public class TournamentController {
 
     private final TournamentDomainService service;
@@ -19,12 +19,12 @@ public class TournamentController {
         this.service = service;
     }
 
-    @GetMapping
+    @GetMapping("/tournaments")
     public List<TournamentResponse> list() {
         return service.listTournaments();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/tournaments/{id}")
     public ResponseEntity<?> get(@PathVariable Long id) {
         var dto = service.getTournament(id);
         return dto == null
@@ -32,7 +32,7 @@ public class TournamentController {
                 : ResponseEntity.ok(dto);
     }
 
-    @GetMapping("/{id}/matches")
+    @GetMapping("/tournaments/{id}/matches")
     public List<TournamentMatchResponse> listMatches(@PathVariable Long id) {
         return service.listMatches(id);
     }
