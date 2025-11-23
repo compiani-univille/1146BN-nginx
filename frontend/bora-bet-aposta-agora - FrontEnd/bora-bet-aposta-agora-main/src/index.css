@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 140 30% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 140 25% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 140 30% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 48 96% 53%;
+    --secondary-foreground: 140 30% 8%;
+
+    --muted: 140 20% 20%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 45 93% 47%;
+    --accent-foreground: 140 30% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 140 20% 18%;
+    --input: 140 20% 18%;
+    --ring: 142 76% 36%;
+
+    --radius: 0.75rem;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 46%));
+    --gradient-secondary: linear-gradient(135deg, hsl(48 96% 53%), hsl(45 93% 47%));
+    --gradient-dark: linear-gradient(180deg, hsl(140 30% 8%), hsl(140 30% 5%));
+    
+    --shadow-glow: 0 0 30px hsla(142, 76%, 36%, 0.3);
+    --shadow-card: 0 8px 16px hsla(0, 0%, 0%, 0.4);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 140 35% 6%;
+    --foreground: 0 0% 95%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
