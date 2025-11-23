@@ -44,13 +44,20 @@ public class AuthorizationFilter implements WebFilter {
 
         ServerHttpRequest request = exchange.getRequest();
         String path = request.getPath().toString();
+        String method = request.getMethod().name();
 
-        // Se for rota pública → não exige token
+        // 1️⃣ LIBERAR OPTIONS (preflight CORS)
+        if (method.equalsIgnoreCase("OPTIONS")) {
+            exchange.getResponse().setStatusCode(HttpStatus.OK);
+            return exchange.getResponse().setComplete();
+        }
+
+        // 2️⃣ Rotas públicas NÃO exigem autenticação
         if (isPublicRoute(path)) {
             return chain.filter(exchange);
         }
 
-        // Para todas as outras rotas, exige token
+        // 3️⃣ Para qualquer outra rota, é obrigatório ter Authorization: Bearer xxx
         String authHeader = request.getHeaders().getFirst("Authorization");
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
             return unauthorized(exchange);
@@ -58,7 +65,7 @@ public class AuthorizationFilter implements WebFilter {
 
         String token = authHeader.substring(7);
 
-        // Validar JWT
+        // 4️⃣ Validar JWT
         DecodedJWT jwt;
         try {
             Algorithm algorithm = Algorithm.HMAC256(jwtSecret.getBytes(StandardCharsets.UTF_8));
@@ -68,13 +75,13 @@ public class AuthorizationFilter implements WebFilter {
             return unauthorized(exchange);
         }
 
-        // Verifica se o token é do tipo "access"
+        // 5️⃣ Verificar se é token do tipo ACCESS
         String tokenType = jwt.getClaim("type").asString();
         if (!"access".equals(tokenType)) {
             return unauthorized(exchange);
         }
 
-        // Usuário autorizado → segue requisição
+        // 6️⃣ Token válido → segue
         return chain.filter(exchange);
     }
 }
